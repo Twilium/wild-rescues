@@ -33,13 +33,14 @@ img {
 
 /* Style rules to show mobile class and hide tab-desk class */
 
-.mobile {
+.mobile, .mobile-tablet {
   display: block;
 }
 
 .tab-desk {
   display: none;
 }
+
 
 /* Style rules for header area */
 
@@ -145,7 +146,7 @@ figcaption {
   margin-left: 10%;
 }
 
-#contact {
+#contact, #form, h2 {
   text-align: center;
 }
 
@@ -163,6 +164,35 @@ figcaption {
   color: #f6eee4;
   text-decoration: none;
   font-weight: bold;
+}
+
+/* Style rules for form elements */
+
+fieldset, input, textarea {
+  margin-bottom: 2%;
+}
+
+fieldset legend {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+label {
+  display: block;
+  padding-top: 2%;
+}
+
+form #submit {
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 2%;
+  background-color: #78593a;
+  color: #f6eee4;
+  font-size: 1.25em;
+  border-radius: 10px;
 }
 
 /* Style rules for footer content */
@@ -218,11 +248,25 @@ footer a {
     grid-column: 1 / span 2;
   }
 
+  /* Tablet Viewport: Style rule for form element */
+  form {
+    width: 70%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
 }
 
 /* Media Query for Desktop Viewport */
 
 @media screen and (min-width: 1000px), print {
+
+  /* Desktop Viewport: Show desktop class, hide mobile-tablet class */
+  .mobile-tablet {
+    display: none;
+  }
 
   /* Desktop Viewport: Style rules for nav area */
   nav li {
@@ -255,6 +299,51 @@ footer a {
   aside {
     grid-column: 1 / span 3;
     font-size: 2em;
+  }
+
+  /*Style rules for table */
+
+  table {
+    border: 1px solid #2a1f14;
+    border-collapse: collapse;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 1%;
+  }
+
+  th, td {
+    border: 1px solid #2a1f14;
+    padding: 1%;
+  }
+
+  th {
+    background-color: #2a1f14;
+    color: white;
+    font-size: 1.15em;
+  }
+
+  tr {
+    background-color: #deccba;
+  }
+
+  /* Desktop Viewport: Stule rules for form elements */
+  form {
+    width: auto;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+  }
+  .btn {
+    grid-column: 1 / span 2;
   }
 }
 
